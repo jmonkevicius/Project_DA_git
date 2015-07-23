@@ -6,6 +6,7 @@ class SQL_Class(object):
     def connect(sqlite_file):
         """ Make connection to an SQLite database file """
         conn = sqlite3.connect(sqlite_file)
+        conn.text_factory = str
         c = conn.cursor()
         return conn, c
 
